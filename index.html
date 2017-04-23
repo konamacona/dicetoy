@@ -5,7 +5,16 @@
     <script type="text/javascript" src="js/three.js"></script>
     <script type="text/javascript" src="js/physi.js"></script>
 
-
+    <style>
+        html, body, div {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+    </style>
 </head>
 
 <body>
@@ -26,8 +35,8 @@
     var renderer, scene, camera, diceTextures;
 
     function initScene () {
-        renderer = new THREE.WebGLRenderer({ antialias: true });
-        renderer.setSize( window.innerWidth, window.innerHeight );
+        renderer = new THREE.WebGLRenderer({ antialias: false });
+        renderer.setSize( window.innerWidth * .99, window.innerHeight * .99 );
         renderer.shadowMap.enabled = true;
         renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         document.getElementById( 'viewport' ).appendChild( renderer.domElement );
